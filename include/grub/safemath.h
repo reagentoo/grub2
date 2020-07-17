@@ -24,7 +24,8 @@
 #include <grub/compiler.h>
 
 /* These appear in gcc 5.1 and clang 3.8. */
-#if GNUC_PREREQ(5, 1) || CLANG_PREREQ(3, 8)
+/* XXX NO NO NO XXX */
+#if 0 && (GNUC_PREREQ(5, 1) || CLANG_PREREQ(3, 8))
 
 #define grub_add(a, b, res)	__builtin_add_overflow(a, b, res)
 #define grub_sub(a, b, res)	__builtin_sub_overflow(a, b, res)
