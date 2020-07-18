@@ -20,6 +20,18 @@
 #undef ELF_R_SYM
 #undef ELF_R_TYPE
 
+#include <assert.h>
+#include <stddef.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "include/grub/elf.h"
+#include "include/grub/util/install.h"
+
+#if !defined(MKIMAGE_ELF32) && !defined(MKIMAGE_ELF64)
+# define MKIMAGE_ELF64
+#endif
+
 #if defined(MKIMAGE_ELF32)
 # define SUFFIX(x)	x ## 32
 # define ELFCLASSXX	ELFCLASS32
